@@ -1,33 +1,28 @@
-from setuptools import setup
-import sys
+# -*- coding: utf-8 -*-
+from distutils.core import setup
+
+packages = \
+['ordered_set-stubs']
+
+package_data = \
+{'': ['*']}
+
+install_requires = \
+['typing>=3.6,<4.0']
+
+setup_kwargs = {
+    'name': 'ordered-set-stubs',
+    'version': '0.1.0',
+    'description': 'Stubs with type annotations for ordered-set Python library',
+    'long_description': '# ordered_set-stubs\nStubs with type annotations for ordered-set Python library\n',
+    'author': 'Roman Inflianskas',
+    'author_email': 'infroma@gmail.com',
+    'url': 'https://github.com/rominf/ordered_set-stubs',
+    'packages': packages,
+    'package_data': package_data,
+    'install_requires': install_requires,
+    'python_requires': '>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*',
+}
 
 
-if sys.version_info < (2, 7, 0) or (3, 0, 0) <= sys.version_info < (3, 5, 0):
-    sys.stderr.write('ERROR: You need Python 2.7 or 3.5+ to install the typing package.\n')
-    exit(1)
-
-
-DESCRIPTION = open('README.md').read()
-
-setup(
-    name="ordered-set-stubs",
-    version='1.0.0',
-    maintainer='Roman Inflianskas',
-    maintainer_email='infroma@gmail.com',
-    license="LICENSE",
-    url='https://github.com/rominf/ordered_set-stubs',
-    platforms=["any"],
-    description="Stubs with type annotations for ordered-set Python library",
-    long_description=DESCRIPTION,
-    long_description_content_type='text/markdown',
-    package_data={'ordered_set-stubs': ['__init__.pyi']},
-    classifiers=[
-        'Development Status :: 5 - Production/Stable',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: Implementation :: CPython',
-        'Programming Language :: Python :: Implementation :: PyPy',
-    ],
-)
+setup(**setup_kwargs)
