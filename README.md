@@ -1,4 +1,7 @@
 # ordered-set-stubs - stubs with type annotations for ordered-set Python library
+
+# Archived - now type annotations are the part of the ordered-set library itself.
+
 ## Usage
 For example, you have the following code in `ordered_set_stubs_test.py` file:
 ```python
